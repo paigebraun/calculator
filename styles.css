@@ -1,0 +1,25 @@
+@font-face {
+    font-family: superComputer;
+    src: url(./fonts/supercomputer.regular.ttf);
+}
+
+@font-face {
+    font-family: oswaldRegular;
+    src: url(./fonts/Oswald-Regular.ttf);
+}
+
+@font-face {
+    font-family: oswaldBold;
+    src: url(./fonts/Oswald-Bold.ttf);
+}
+
+html {
+    background-color: #F3F1E1;
+    background-image: url("images/office-crop.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    width: 1072px;
+    background-position: -100%;
+}
+
