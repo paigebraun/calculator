@@ -15,12 +15,13 @@
 
 .background-img {
     height: 100%;
-    width: 100%;
+    width: 1430px;
     position: absolute;
     left: 250px;
     top: 0;
     background-image: url(./images/office-crop.png);
     background-repeat: repeat;
+    background-size: contain;
 }
 
 .sidebar {
@@ -51,4 +52,117 @@
     margin: 0px;
 }
 
+.calculator {
+    width: 388px;
+    height: 689px;
+    position: absolute;
+    left: 55%;
+    top: 60%;
+    margin-left: -243px;
+    margin-top: -431.5px;
+    background-image: url(./images/calc-small.png);
+}
 
+.keypad {
+    position: absolute;
+    top: 235px;
+    display: block;
+    width: 329px;
+    padding: 2px 0px 1px -1px;
+    border-radius: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+  }
+
+  .key {
+    cursor: pointer;
+    display: inline-block;
+    width: 76px;
+    height: 77px;  
+    margin: 1px;
+    border-radius: 2px;
+  }
+
+  .key .key-content {
+    display: block;
+    width: 70px;
+    height: 65px;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 6px;
+    font-family: OswaldRegular, sans-serif;
+    font-size: 34px;
+    border-radius: 25%;
+    position: relative;
+    top: 5px;
+    left: 5px;
+  }
+
+  .key.number .key-content {
+    background: linear-gradient(
+        #484E46, 
+        #A6ACA3 
+    );
+    color: #F2F0D9;
+  }
+
+  .key.symbol .key-content {
+    background: linear-gradient(
+        #CBC5B3,
+        #FAF8E9
+    );
+    color: #666C63;
+  }
+
+  .key.misc .key-content {
+    background: linear-gradient(#D06618, #F69E3D, #FEAC48);
+    color: #F2F0D9;
+  }
+
+  .top-key {
+    width: 138px;
+    height: 56px;
+    background: linear-gradient(
+        #CBC5B3,
+        #FAF8E9
+    );
+    top: 256px;
+    left: 36px;
+    position: relative;
+    border-radius: 11pt;
+    margin: 0px;
+  }
+
+  .top {
+    font-family: OswaldBold, sans-serif;
+    font-size: 15pt;
+    text-align: center;
+    line-height: 18pt;
+    position: absolute;
+    margin-top: 4px;
+    color: #666C63;
+  }
+
+  .key.hide {
+    cursor: default;
+  }
+
+  .output {
+    position: absolute;
+    width: 300px;
+    height: 107px;
+    left: 67px;
+    top: 112px;
+  }
+
+  .output-content{
+    font-family: oswaldBold;
+    font-size: 25px;
+    position: relative;
+    top: 10px;
+    text-align: right;
+    right: 44px;
+    color: #9E2530;
+  }
