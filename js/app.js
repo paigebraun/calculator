@@ -40,6 +40,7 @@ let operator = "";
 let operatorClicked = false;
 let equalsClicked = false;
 let calcAnswer = 0;
+let periodClicked = 0;
 
 const calcKey = document.querySelectorAll('.key');
 const output = document.querySelector('.output-content');
@@ -82,6 +83,7 @@ function resetValue(){
     operator = '';
     operatorClicked = false;
     equalsClicked = false;
+    periodClicked = 0;
     addEvent();
 }
 
@@ -94,6 +96,7 @@ function clear() {
     operatorClicked = false;
     equalsClicked = false;
     calcAnswer = 0;
+    periodClicked = 0;
     updateDisplay(0);
     addEvent();
 }
@@ -112,8 +115,15 @@ function handler(){
     }
     //capture user input of first number
     if (((this.className == "key number") || (this.className == "key number period")) && (firstNumberDecided == false)) {
-        firstNumber = "" + firstNumber + this.textContent;
-        updateDisplay(firstNumber);
+        if ((this.className == "key number period")) {
+            periodClicked += 1;
+        }
+        if ((this.className == "key number period") && (periodClicked > 1)){
+            return;
+        }else{
+            firstNumber = "" + firstNumber + this.textContent;
+            updateDisplay(firstNumber);
+        }
     }
     //delete key pressed during first number input
     if ((this.className == "key misc del") && (firstNumberDecided == false)){
@@ -160,8 +170,15 @@ function handler(){
     }
     //capture user input of second number
     if (((this.className == "key number") || (this.className == "key number period")) && (equalsClicked == false) && (getSecondNumber == true)) {
-        secondNumber = "" + secondNumber + this.textContent;
-        updateDisplay(secondNumber);
+        if ((this.className == "key number period")) {
+            periodClicked += 1;
+        }
+        if ((this.className == "key number period") && (periodClicked > 1)){
+            return;
+        }else{
+            secondNumber = "" + secondNumber + this.textContent;
+            updateDisplay(secondNumber);
+        }
     }
     //capture user input of equals sign and reset values after calculation made
     if (this.className == "key symbol equals") {
