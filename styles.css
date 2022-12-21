@@ -13,6 +13,11 @@
     src: url(./fonts/Oswald-Bold.ttf);
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 .background-img {
     height: 100%;
     width: 100%;
