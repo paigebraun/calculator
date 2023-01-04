@@ -13,57 +13,31 @@
     src: url(./fonts/Oswald-Bold.ttf);
 }
 
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
+body {
+  background-color: #F3F1E1;
+  padding: 0px;
+  margin: 0px;
+  min-height: 100vh;
+  display: flex;
 }
 
-.background-img {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    left: 250px;
-    top: 0;
-    background-image: url(./images/office-crop.png);
-    background-repeat: repeat;
-}
-
-.sidebar {
-    height: 100%;
-    width: 250px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-color: #F3F1E1;
-}
-
-.sidetext{
-    transform: rotate(270deg);
-    bottom: 150px;
-    position: absolute;
-
-}
-
-.calc-text {
-    font-family: superComputer;
-    font-size: 60px;
-    margin:0px;
-}
-
-.by-text {
-    font-family: oswaldRegular;
-    font-size: 30px;
-    margin: 0px;
+.background {
+  background-color: #D8B974;
+  height: 100vh;
+  border-radius: 52px;
+  box-sizing: border-box;
+  display: flex;
+  flex-grow: 1;
+  border: 30px solid #f3f1e1;
+  position: relative;
 }
 
 .calculator {
     width: 388px;
     height: 689px;
     position: absolute;
-    left: 60%;
-    top: 60%;
-    margin-left: -243px;
-    margin-top: -431.5px;
+    top: 13vh;
+    left: 38.5vw;
     background-image: url(./images/calc-small.png);
 }
 
