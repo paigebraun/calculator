@@ -40,7 +40,8 @@ let operator = "";
 let operatorClicked = false;
 let equalsClicked = false;
 let calcAnswer = 0;
-let periodClicked = 0;
+let periodClicked1 = 0;
+let periodClicked2 = 0;
 
 const calcKey = document.querySelectorAll('.key');
 const output = document.querySelector('.output-content');
@@ -83,7 +84,8 @@ function resetValue(){
     operator = '';
     operatorClicked = false;
     equalsClicked = false;
-    periodClicked = 0;
+    periodClicked1 = 0;
+    periodClicked2 = 0;
     addEvent();
 }
 
@@ -96,7 +98,8 @@ function clear() {
     operatorClicked = false;
     equalsClicked = false;
     calcAnswer = 0;
-    periodClicked = 0;
+    periodClicked1 = 0;
+    periodClicked2 = 0;
     updateDisplay(0);
     addEvent();
 }
@@ -116,9 +119,9 @@ function handler(){
     //capture user input of first number
     if (((this.className == "key number") || (this.className == "key number period")) && (firstNumberDecided == false)) {
         if ((this.className == "key number period")) {
-            periodClicked += 1;
+            periodClicked1 += 1;
         }
-        if ((this.className == "key number period") && (periodClicked > 1)){
+        if ((this.className == "key number period") && (periodClicked1 > 1)){
             return;
         }else{
             firstNumber = "" + firstNumber + this.textContent;
@@ -132,8 +135,10 @@ function handler(){
             firstNumber = "";
             updateDisplay(0);
         } else {
+            if (firstNumber.slice(-1) == "."){
+                periodClicked1 -= 1;
+            }
             firstNumber = firstNumber.slice(0, -1);
-            firstNumber = Number(firstNumber);
             updateDisplay(firstNumber);
         }
     }
@@ -163,17 +168,19 @@ function handler(){
             secondNumber = "";
             updateDisplay(0);
         } else {
+            if (secondNumber.slice(-1) == "."){
+                periodClicked2 -= 1;
+            }
             secondNumber = secondNumber.slice(0, -1);
-            secondNumber = Number(secondNumber);
             updateDisplay(secondNumber);
         }
     }
     //capture user input of second number
     if (((this.className == "key number") || (this.className == "key number period")) && (equalsClicked == false) && (getSecondNumber == true)) {
         if ((this.className == "key number period")) {
-            periodClicked += 1;
+            periodClicked2 += 1;
         }
-        if ((this.className == "key number period") && (periodClicked > 1)){
+        if ((this.className == "key number period") && (periodClicked2 > 1)){
             return;
         }else{
             secondNumber = "" + secondNumber + this.textContent;
