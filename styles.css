@@ -29,15 +29,14 @@ body {
   display: flex;
   flex-grow: 1;
   border: 30px solid #f3f1e1;
-  position: relative;
+  justify-content: center;
+  align-items: center;
 }
 
 .calculator {
     width: 388px;
     height: 689px;
     position: absolute;
-    top: 13vh;
-    left: 38.5vw;
     background-image: url(./images/calc-small.png);
 }
 
